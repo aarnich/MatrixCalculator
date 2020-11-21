@@ -3,4 +3,8 @@ public class MatrixInverse {
         return matrix_i;
     }
 
+    public void GenerateIdentityMatrix(int[][] matrix_i) {
+
+    }
+
 }
