@@ -1,5 +1,5 @@
 public class MatrixAdd {
-    public static int[][] matrixAdd(int[][] matrix_x, int[][] matrix_y) {
+    public static float[][] matrixAdd(float[][] matrix_x, float[][] matrix_y) {
         if (!(MatrixSymmetryChecker(matrix_x) && MatrixSymmetryChecker(matrix_y))) {
             System.out.println("Invalid Matrices");
             return matrix_x;
@@ -14,7 +14,7 @@ public class MatrixAdd {
             System.out.println("Incompatible Matrices");
             return matrix_x;
         }
-        int[][] matrix_sum = new int[matrix_x_xaxis][matrix_x_yaxis];
+        float[][] matrix_sum = new float[matrix_x_xaxis][matrix_x_yaxis];
         if ((matrix_x_xaxis == matrix_y_xaxis) && (matrix_x_yaxis == matrix_y_yaxis)) {
             if (matrix_y_yaxis == matrix_x_yaxis) {
 
@@ -31,7 +31,7 @@ public class MatrixAdd {
 
     }
 
-    public static Boolean MatrixSymmetryChecker(int[][] matrix_i) {
+    public static Boolean MatrixSymmetryChecker(float[][] matrix_i) {
         int rowSize = 0;
         for (int i = 1; i < matrix_i.length; i++) {
             rowSize = matrix_i[i].length;

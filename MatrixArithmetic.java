@@ -1,15 +1,15 @@
 public class MatrixArithmetic {
-    public static int matrixRowCount(int[][] matrix_i) {
+    public static int matrixRowCount(float[][] matrix_i) {
         return matrix_i.length;
 
     }
 
-    public static int matrixColumnCount(int[][] matrix_i) {
+    public static int matrixColumnCount(float[][] matrix_i) {
         return matrix_i[0].length;
 
     }
 
-    public static int[][] matrixAdd(int[][] matrix_x, int[][] matrix_y) {
+    public static float[][] matrixAdd(float[][] matrix_x, float[][] matrix_y) {
         if (!(MatrixSymmetryChecker(matrix_x) && MatrixSymmetryChecker(matrix_y))) {
             System.out.println("Invalid Matrices");
             return matrix_x;
@@ -24,7 +24,7 @@ public class MatrixArithmetic {
             System.out.println("Incompatible Matrices");
             return matrix_x;
         }
-        int[][] matrix_sum = new int[matrix_x_xaxis][matrix_x_yaxis];
+        float[][] matrix_sum = new float[matrix_x_xaxis][matrix_x_yaxis];
         if ((matrix_x_xaxis == matrix_y_xaxis) && (matrix_x_yaxis == matrix_y_yaxis)) {
             if (matrix_y_yaxis == matrix_x_yaxis) {
 
@@ -42,9 +42,9 @@ public class MatrixArithmetic {
 
     }
 
-    public static int[][] matrixMultiply(int[][] matrix_x, int[][] matrix_y) {
-        int[][] matrix_a = matrix_x;
-        int[][] matrix_b = matrix_y;
+    public static float[][] matrixMultiply(float[][] matrix_x, float[][] matrix_y) {
+        float[][] matrix_a = matrix_x;
+        float[][] matrix_b = matrix_y;
         if (!(MatrixColumnCount.matrixColumnCount(matrix_a) == MatrixRowCount.matrixRowCount(matrix_b))) {
             if (MatrixColumnCount.matrixColumnCount(matrix_b) == MatrixRowCount.matrixRowCount(matrix_a)) {
                 matrix_a = matrix_y;
@@ -54,7 +54,7 @@ public class MatrixArithmetic {
                 return matrix_x;
             }
         }
-        int[][] matrix_p = new int[MatrixRowCount.matrixRowCount(matrix_a)][MatrixColumnCount
+        float[][] matrix_p = new float[MatrixRowCount.matrixRowCount(matrix_a)][MatrixColumnCount
                 .matrixColumnCount(matrix_b)];
         for (int i = 0; i < matrix_p.length; i++) {
             System.out.println("multiplying...");
@@ -63,12 +63,12 @@ public class MatrixArithmetic {
         return matrix_p;
     }
 
-    public static int[] multiplyTuples(int[][] matrix_a, int[][] matrix_b, int row) {
-        int val = 0;
-        int[] tuple = new int[MatrixColumnCount.matrixColumnCount(matrix_b)];
+    public static float[] multiplyTuples(float[][] matrix_a, float[][] matrix_b, int row) {
+        float val = 0;
+        float[] tuple = new float[MatrixColumnCount.matrixColumnCount(matrix_b)];
         for (int i = 0; i < matrix_b[0].length; i++) {
             for (int j = 0; j < matrix_a[row - 1].length; j++) {
-                int temp = matrix_a[row - 1][j] * matrix_b[j][i];
+                float temp = matrix_a[row - 1][j] * matrix_b[j][i];
                 val += temp;
             }
             tuple[i] = val;
@@ -77,7 +77,7 @@ public class MatrixArithmetic {
         return tuple;
     }
 
-    public static int[][] matrixSubtract(int[][] matrix_x, int[][] matrix_y) {
+    public static float[][] matrixSubtract(float[][] matrix_x, float[][] matrix_y) {
         if (!(MatrixSymmetryChecker(matrix_x) && MatrixSymmetryChecker(matrix_y))) {
             System.out.println("Invalid Matrices");
             return matrix_x;
@@ -92,7 +92,7 @@ public class MatrixArithmetic {
             System.out.println("Incompatible Matrices");
             return matrix_x;
         }
-        int[][] matrix_sum = new int[matrix_x_xaxis][matrix_x_yaxis];
+        float[][] matrix_sum = new float[matrix_x_xaxis][matrix_x_yaxis];
         if ((matrix_x_xaxis == matrix_y_xaxis) && (matrix_x_yaxis == matrix_y_yaxis)) {
             if (matrix_y_yaxis == matrix_x_yaxis) {
                 for (int i = 0; i < matrix_sum.length; i++) {
@@ -109,7 +109,7 @@ public class MatrixArithmetic {
 
     }
 
-    public static Boolean MatrixSymmetryChecker(int[][] matrix_i) {
+    public static Boolean MatrixSymmetryChecker(float[][] matrix_i) {
         int rowSize = 0;
         for (int i = 1; i < matrix_i.length; i++) {
             rowSize = matrix_i[i].length;
