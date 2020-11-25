@@ -26,8 +26,7 @@ public class MatrixAdd {
                 }
             }
         }
-        System.out.println("x axis: " + matrix_sum.length);
-        System.out.println("y axis: " + matrix_sum[0].length);
+
         return matrix_sum;
 
     }

@@ -1,13 +1,10 @@
-
 public class Main {
     public static void main(String[] args) {
-        int[][] matrix_a = { { 6, 1, 3 }, { 4, -9, 3 }, { 4, -9, 3 } };
-        int[][] matrix_b = { { 1, 4 }, { 2, 8 }, { 1, 6 } };
-        int[][] matrix_c = { { 1 }, { 2, 3, 4 }, { 5, 6 } };
-        displayMatrix(MatrixInverse.GenerateIdentityMatrix(matrix_a));
+        int[][] matrix_a = { { 1, 3, 1, 4 }, { 3, 9, 5, 15 }, { 0, 2, 1, 1 }, { 0, 4, 2, 3 } };
+        displayMatrix(Adjugate.GenerateAdjugate(matrix_a));
     }
 
-    public static void displayMatrix(int[][] matrix_p) {
+    public static void displayMatrix(int[][] matrix_p) { // method
         for (int i = 0; i < matrix_p.length; i++) {
             for (int j = 0; j < matrix_p[i].length; j++) {
                 System.out.print("[" + matrix_p[i][j] + "], ");
@@ -16,7 +13,7 @@ public class Main {
         }
     }
 
-    public static Boolean SquareMatrix(int[][] matrix_i) {
+    public static Boolean SquareMatrix(int[][] matrix_i) { // function
         int rowSize = 0;
         for (int i = 1; i < matrix_i.length; i++) {
             rowSize = matrix_i[i].length;
