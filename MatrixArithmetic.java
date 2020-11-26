@@ -108,7 +108,6 @@ public class MatrixArithmetic {
         return matrix_sum;
 
     }
-
     public static Boolean MatrixSymmetryChecker(float[][] matrix_i) {
         int rowSize = 0;
         for (int i = 1; i < matrix_i.length; i++) {
